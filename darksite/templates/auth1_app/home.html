@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" type="text/css" href=" {% static 'styles/styles.css' %}">
+</head>
+<!-- login.html or home.html -->
+<body style="background-image: url('{% if user.is_authenticated and user.userprofile.background_image %}{{ user.userprofile.background_image.url }}{% else %}{% static 'images/logbg.jpg' %}{% endif %}'); background-size: cover;">
+
+
+    <div class="container">
+        <h2 style="background-image: url('{% static 'images/thumb1.png' %}'); background-size: cover; "></h2>
+        <p>Hey! , {{request.user.username}}!</p>
+        <h1>Welcome To Home</h1>
+        <a href="{% url 'protected' %}">Go to your Protected page</a>
+        <h2>CLick The Dog Below to go to Cutomization Page</h2>
+
+        <a href="{% url 'change_background' %}">
+            <img src="{% static 'images/sideeyedog.gif' %}" alt="Customize" style="width: 100px; height: auto;">
+        </a>
+
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+
+        </form>
+    
+
+    </div>
+</body>
+</html>

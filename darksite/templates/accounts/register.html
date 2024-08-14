@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href=" {% static 'styles/styles.css' %}">
+</head>
+<body style="background-image: url('{% static 'images/logbg.jpg' %}'); background-size: cover;">
+
+    <div class="container">
+        <h2 style="background-image: url('{% static 'images/register.gif' %}'); background-size: cover;"></h2>
+        <form method="POST" action="{% url 'register' %}">
+           {% csrf_token %}
+           {{form.as_p}}
+           <button type="submit"> Register </button>
+        </form>
+
+    </div>
+</body>
+</html>

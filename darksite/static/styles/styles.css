@@ -1,0 +1,199 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    line-height: 1.6;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('{% static 'images/logbg.jpg' %}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Container Style */
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(179, 179, 179, 0.8); /* Slightly transparent background */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Headings Style */
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: rainbow 5s linear infinite; /* Apply the rainbow animation */
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #000000;
+    margin-bottom: 20px;
+    background-image: url('{% static 'images/thumbx.png' %}');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px; /* Adjust padding if needed */
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Form Style */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 1.2s ease-in-out;
+    /*background: rgba(50, 50, 50, 0.8); /* Dark grey background with slight transparency */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff; /* Changed to white for better visibility on dark background */
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Error Style */
+.error {
+    color: red;
+    margin-top: 10px;
+    animation: shake 0.5s ease;
+}
+
+/* Images and GIFs */
+img, .gif {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Rainbow Animation */
+@keyframes rainbow {
+    0% { color: #ff0000; }
+    14% { color: #ff7f00; }
+    28% { color: #ffff00; }
+    42% { color: #7fff00; }
+    57% { color: #00ff00; }
+    71% { color: #00ff7f; }
+    85% { color: #00ffff; }
+    100% { color: #ff00ff; }
+}
+
+/* Additional Styling */
+button, a {
+    margin-right: 10px;
+}
+
+h2 span {
+    color: #007bff;
+    animation: colorChange 2s infinite;
+}
+
+@keyframes colorChange {
+    0%, 100% {
+        color: #007bff;
+    }
+    50% {
+        color: #0056b3;
+    }
+}
